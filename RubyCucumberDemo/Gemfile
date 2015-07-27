@@ -1,0 +1,13 @@
+source "http://rubygems.org"
+gem 'bundler'
+
+gem 'cucumber'
+gem 'site_prism'
+gem 'capybara'
+gem 'poltergeist'
+gem 'rspec'
+
+gem 'selenium-webdriver'
+gem 'ffi'
+gem 'pry'
+gem 'require_all'
