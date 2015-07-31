@@ -14,7 +14,12 @@ require_all 'lib/pages'
 
 Capybara.register_driver :selenium do |app|
   options = {
-      browser: :firefox
+      browser: :firefox,
+      desired_capabilities: {
+	      "firefoxOptions" => {
+	        "args" => %w{ window-size=1920,1280 }
+	      }
+	  }
   }
   Capybara::Selenium::Driver.new(app, options)
 end
