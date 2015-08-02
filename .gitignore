@@ -1,1 +1,14 @@
 .DS_Store
+JavaGaugeDemo/.DS_Store
+JavaGaugeDemo/.gradle
+JavaGaugeDemo/.idea
+JavaGaugeDemo/JavaGaugeDemo.iml
+JavaGaugeDemo/JavaGaugeDemo.ipr
+JavaGaugeDemo.JavaGaugeDemo/iws
+JavaGaugeDemo/api.log
+JavaGaugeDemo/build
+JavaGaugeDemo/build.gradle
+JavaGaugeDemo/gauge_bin
+JavaGaugeDemo/libs
+JavaGaugeDemo/logs
+JavaGaugeDemo/reports
