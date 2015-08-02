@@ -1,5 +1,4 @@
 class DetailsPage < SitePrism::Page
-	# set_url_matcher /\/product\/\d+.html?\d+,\d+/
 	set_url "/product/{/product_number}.html"
 
 	elements :networks, '#pro-skus .pro-sku-text ol a'

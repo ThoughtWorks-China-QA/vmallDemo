@@ -27,7 +27,7 @@ class ShoppingCartPage < SitePrism::Page
 
 	def adjust_count arg1, count, name
 		products.each do |product|
-			if product.name.first.text == name
+			if product.name.text == name
 				if arg1=='多'
 					temp = 0
 					while temp<count.to_i do
@@ -47,6 +47,7 @@ class ShoppingCartPage < SitePrism::Page
 	end
 
 	def move_to destination
+		sleep 1
 		checkout.click if destination=='去结算'
 	end
 end
