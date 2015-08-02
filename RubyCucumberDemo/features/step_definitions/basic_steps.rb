@@ -15,9 +15,11 @@ end
 end
 
 那么(/^:我可以在页面上看到如下信息:$/) do |table|
+	sleep 1
 	table.hashes.each do |t|
 		expect(page).to have_text(t['文字'])
 	end
+	sleep 1
 end
 
 而且(/^:我选择以下套餐加入购物车:$/) do |table|

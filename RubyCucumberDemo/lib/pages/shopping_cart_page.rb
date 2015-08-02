@@ -27,7 +27,7 @@ class ShoppingCartPage < SitePrism::Page
 
 	def adjust_count arg1, count, name
 		products.each do |product|
-			if product.name.text == name
+			if product.name.first.text == name
 				if arg1=='多'
 					temp = 0
 					while temp<count.to_i do

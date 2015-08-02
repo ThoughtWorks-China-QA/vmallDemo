@@ -9,6 +9,7 @@ class DetailsPage < SitePrism::Page
 	section :success_popup, SuccessPopup, '#cart-tips'
 
 	def select_package table
+		sleep 1
 		table.hashes.each do |row|
 			if row['选择制式']
 				expected_network = row['选择制式']
