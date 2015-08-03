@@ -1,22 +1,12 @@
-Products
+购买移动电源和手机
 ========
 
-Create a new product
+购买手机和移动电源
 --------------------
 
-* Create a product 
-     |Title         |Description         |Author        |Price|
-     |--------------|--------------------|--------------|-----|
-     |Go Programming|ISBN: 978-1453636671|John P. Baugh |25.00|
-     |The Way to Go |ISBN: 978-1469769165|Ivo Balbaert  |20.00|
-     |Go In Action  |ISBN: 9781617291784 |Brian Ketelsen|30.00|
-     |Learning Go   |ebook               |Miek Gieben   |0.00 |
-
-"Find and Open product page for" is a concept
-
-* Find and Open product page for "Go Programming"
-* Verify product author as "John P. Baugh"
-
-The below concept is an example of nested concept, check out the definition.
-
-* Delete product "Learning Go"
+* 购买产品<table:resources/productsList.csv>
+* 转到购物车页面
+* 此时购物车内可以看到刚才购买的产品<table:resources/productsList.csv>
+* 确认结算
+* 验证进入登陆页面
+* 结束测试

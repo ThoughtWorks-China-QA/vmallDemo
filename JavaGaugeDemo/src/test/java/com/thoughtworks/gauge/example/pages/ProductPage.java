@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.containsString;
 
 
 public class ProductPage extends BasePage{
-    @FindBy(how= How.CSS, css ="a[title=\"加\"]")
+    @FindBy(how= How.CSS, css ="a[title='加']")
     public WebElement q_increase;
 
     @FindBy(how= How.CSS, css = "a.button-add-cart")
@@ -21,8 +21,11 @@ public class ProductPage extends BasePage{
 
     public WebElement q_text;
 
+    @FindBy(how= How.CSS, css = "div.pro-add-success-button a[title='去购物车结算']")
+    public WebElement q_toPay;
+
     public void chooseModel(WebDriver driver, String model){
-        String css = ".right-area .sku a[title=\""+model+"\"]";
+        String css = ".right-area .sku a[title='"+model+"']";
         q_item = driver.findElement(By.cssSelector(css));
         q_item.click();
     }
@@ -47,7 +50,10 @@ public class ProductPage extends BasePage{
 
     public void verifyPageContainsText(WebDriver driver, String text) {
         q_text = driver.findElement(By.xpath("//div[text()='"+text+"']"));
-        Assert.assertThat(text + "不存在", q_text.toString(),containsString(text));
+        Assert.assertThat(text + "不存在", q_text.getText(), containsString(text));
     }
 
+    public void navigateToPaymentPage(WebDriver driver) {
+        q_toPay.click();
+    }
 }

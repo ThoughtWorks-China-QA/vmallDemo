@@ -1,0 +1,28 @@
+package com.thoughtworks.gauge.example.pages;
+
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+import static org.hamcrest.Matchers.containsString;
+
+public class ShopcartPage extends BasePage {
+    public WebElement q_prouctName;
+
+    @FindBy(how= How.CSS, css = "a[seed='cart-pay']")
+    public WebElement q_toPay;
+
+    public void verifyProductName(WebDriver driver, String text) {
+        q_prouctName = driver.findElement(By.cssSelector("p.p-name a[title='" + text.replace(" ","\u00a0") + "']"));
+        Assert.assertThat(text + "不存在", q_prouctName.getText(), containsString(text));
+    }
+
+    public void navigateToPayment() {
+
+        q_toPay.click();
+    }
+}
