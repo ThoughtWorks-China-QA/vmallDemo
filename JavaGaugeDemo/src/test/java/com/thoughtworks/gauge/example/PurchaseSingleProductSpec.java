@@ -50,7 +50,6 @@ public class PurchaseSingleProductSpec {
 
     @Step("选择产品<华为HUAWEI  Colorphon 5 超薄移动电源AP006 4800mAh  荣耀标准版（石墨黑）>")
     public void chooseProduct(String productName) {
-        waitForSometime(3);
         listPage.chooseProduct(driver, productName);
     }
 
@@ -76,7 +75,6 @@ public class PurchaseSingleProductSpec {
 
     @Step("能看到<成功加入购物车>字样")
     public void verifyPageContainsText(String text) {
-        waitForSometime(3);
         ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
         productPage.verifyPageContainsText(driver, text);
     }
@@ -95,14 +93,11 @@ public class PurchaseSingleProductSpec {
             }
             chooseColor(row.get(3));
             setCount(Integer.parseInt(row.get(4)));
-            waitForSometime(5);
             addToShopcart();
-            
         }
     }
     @Step("转到购物车页面")
     public void navigateToShopcartPage(){
-        waitForSometime(3);
         productPage.navigateToPaymentPage(driver);
         shopcartPage = PageFactory.initElements(driver, ShopcartPage.class);
         for(String winHandle : driver.getWindowHandles()){
@@ -114,15 +109,13 @@ public class PurchaseSingleProductSpec {
     public void verifyProducts(Table table){
         List<List<String>> rows = table.getRows();
         for (List<String> row : rows) {
-            waitForSometime(3);
             shopcartPage.verifyProductName(driver, row.get(1));
         }
     }
 
     @Step("确认结算")
     public void navigateToPayment(){
-        waitForSometime(3);
-        shopcartPage.navigateToPayment();
+        shopcartPage.navigateToPayment(driver);
     }
 
     @Step("验证进入登陆页面")

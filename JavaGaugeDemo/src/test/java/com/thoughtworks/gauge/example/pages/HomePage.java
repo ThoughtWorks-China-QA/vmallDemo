@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
     public WebElement q_powerBankCategory ;
 
     public void chooseCategory(WebDriver driver, String category) {
-        q_powerBankCategory = new WebDriverWait(driver,10).until(ExpectedConditions.presenceOfElementLocated((By.linkText(category))));
+        q_powerBankCategory = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated((By.linkText(category))));
         q_powerBankCategory.click();
     }
 
