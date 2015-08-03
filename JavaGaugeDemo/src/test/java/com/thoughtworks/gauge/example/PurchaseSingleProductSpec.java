@@ -127,13 +127,7 @@ public class PurchaseSingleProductSpec {
         loginPage.verifyOnLoginPaga(driver);
     }
 
-    @Step("结束测试")
-    public void closeDrivers() {
-        for(String winHandle : driver.getWindowHandles()){
-            driver.switchTo().window(winHandle);
-            driver.close();
-        }
-    }
+
 
     public void waitForSometime(Integer seconds) {
         try {
