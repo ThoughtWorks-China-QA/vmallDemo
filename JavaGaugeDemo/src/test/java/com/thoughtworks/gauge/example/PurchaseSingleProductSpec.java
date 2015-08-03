@@ -94,6 +94,7 @@ public class PurchaseSingleProductSpec {
             chooseColor(row.get(3));
             setCount(Integer.parseInt(row.get(4)));
             addToShopcart();
+            waitForSometime(2);
         }
     }
     @Step("转到购物车页面")

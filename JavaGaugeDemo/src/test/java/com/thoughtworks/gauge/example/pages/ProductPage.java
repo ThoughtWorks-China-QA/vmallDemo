@@ -47,8 +47,6 @@ public class ProductPage extends BasePage{
         String css = "a.button-add-cart";
         q_submit = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable((By.cssSelector(css))));
         q_submit.click();
-//        WebElement dynamicWebElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".pro-add-success-msg")));
-
     }
 
     public void verifyPageContainsText(WebDriver driver, String text) {
