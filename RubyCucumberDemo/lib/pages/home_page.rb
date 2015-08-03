@@ -5,6 +5,7 @@ class HomePage < SitePrism::Page
 	sections :all_product, AllProducts, '.category-info'
 
 	def select title, child
+		showTime
 		all_product.each do |a|
 			if a.title.text == title
 				a.sub_products.each do |sp|

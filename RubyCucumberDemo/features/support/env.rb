@@ -13,16 +13,10 @@ require_all 'lib/sections'
 require_all 'lib/pages'
 
 Capybara.register_driver :selenium do |app|
-  options = {
-      browser: :firefox,
-      desired_capabilities: {
-	      "firefoxOptions" => {
-	        "args" => %w{ window-size=1920,1280 }
-	      }
-	  }
-  }
-  Capybara::Selenium::Driver.new(app, options)
+  Capybara::Selenium::Driver.new(app)
 end
 
 Capybara.app_host = 'http://www.vmall.com'
 Capybara.default_driver = :selenium
+
+Capybara.current_session.driver.browser.manage.window.maximize
