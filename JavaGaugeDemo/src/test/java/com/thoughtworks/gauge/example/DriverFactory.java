@@ -8,11 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class DriverFactory {
     private static final String CHROME = "chrome";
-    private static final Integer waitSeconds = 3;
+    private static final Integer waitSeconds = 2;
 
     public static WebDriver getDriver() {
         return driver;
@@ -40,12 +38,20 @@ public class DriverFactory {
 
     @BeforeStep
     public void WaitBeforeStepToMakeProcessSlow() {
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        try {
+            Thread.sleep(waitSeconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @AfterStep
     public void WaitAfterStepToMakeProcessSlow() {
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        try {
+            Thread.sleep(waitSeconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
